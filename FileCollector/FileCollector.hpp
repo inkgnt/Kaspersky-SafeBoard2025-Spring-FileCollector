@@ -59,7 +59,7 @@ public:
     // клиент должен не держать полученный shared_ptr дольше, 
     // чем живёт сам FileCollector (или конкретный File), чтобы избежать висячих указателей.
 
-    std::optional<std::shared_ptr<const std::vector<uint8_t>>> GetFile(uint32_t fileId) const;
+    std::shared_ptr<const std::vector<uint8_t>> GetFile(uint32_t fileId) const;
     std::optional<bool> IsComplete(uint32_t fileId) const;
 private:
     struct File 

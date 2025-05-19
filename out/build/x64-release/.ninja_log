@@ -1,0 +1,10 @@
+# ninja log v6
+20	1037	7693771181395058	googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	351d4f0baa197fc0
+24	1436	7693771181513871	FileCollector/CMakeFiles/FileCollector.dir/FileCollector.cpp.obj	8ac6fc5cfe028ea6
+1437	1485	7693771195635947	FileCollector/FileCollector.lib	f9163c6ece9af5c4
+31	2153	7693771181600204	Tests/CMakeFiles/FileCollectorTests.dir/FileCollectorIntegrationTest.cpp.obj	f99fbbc47f0110cf
+27	2356	7693771181552161	Tests/CMakeFiles/FileCollectorTests.dir/FileCollectorUnitTest.cpp.obj	f4b2e253c63397f0
+15	4141	7693771181395058	googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	4b5333d9dfbd9242
+4142	4203	7693771222721142	lib/gtest.lib	8de15d028aa77ae2
+4204	4245	7693771223286455	lib/gtest_main.lib	44366ffb6a808c78
+4245	4419	7693771223712644	Tests/FileCollectorTests.exe	a180e7251fa4f0b9

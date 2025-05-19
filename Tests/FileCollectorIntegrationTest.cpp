@@ -45,11 +45,10 @@ TEST(FileCollector_Integration, ThreadPoolCollectsFile) {
 
     // теперь можно получить полностью собранный файл,  
     auto opt = collector.GetFile(fileId);
-    ASSERT_TRUE(opt.has_value());
+    ASSERT_TRUE(opt);
     
-    ASSERT_EQ(opt.value()->size(), fileSize);
+    ASSERT_EQ(opt->size(), fileSize);
     for (size_t i = 0; i < fileSize; ++i) {
-        EXPECT_EQ((*opt.value())[i], static_cast<uint8_t>(i));
+        EXPECT_EQ((*opt)[i], static_cast<uint8_t>(i));
     }
 }
-

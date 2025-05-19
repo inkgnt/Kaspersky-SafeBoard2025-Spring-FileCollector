@@ -54,25 +54,24 @@ void FileCollector::OnNewChunk(uint32_t fileId, size_t pos, std::vector<uint8_t>
     processChunk(fileId, pos, std::move(chunk));
 }
 
-std::optional<std::shared_ptr<const std::vector<uint8_t>>> FileCollector::GetFile(uint32_t fileId) const
+std::shared_ptr<const std::vector<uint8_t>> FileCollector::GetFile(uint32_t fileId) const
 {
     std::shared_lock lock(filesMtx);
     auto it = files_.find(fileId);
     if (it == files_.end())
-        return std::nullopt;
+        return nullptr;
 
     File* file = it->second.get();
     std::shared_lock fileLock(file->fileMtx);
 
     if (file->isCompleteUnsafe()) { // если полный файл, то можно не бояться гонок данных, и вернуть указатель тк
-        // больше он изменяться не будет
+                                    // больше он изменяться не будет
         return std::shared_ptr<const std::vector<uint8_t>>(
             &file->buffer,                      // сырой указатель
             [](const std::vector<uint8_t>*) {}  // лямбда делитор который ничего не делает, для предотвращения UB 
         );
     }
     // если файл неполный мы вынуждены возвращать полную копию чтобы избежать состояния гонки
-    // кстати тут нет никакой копии копии потому что с С++ 17 RVO гарантировано
 
     return std::make_shared<std::vector<uint8_t>>(file->buffer);
 }
