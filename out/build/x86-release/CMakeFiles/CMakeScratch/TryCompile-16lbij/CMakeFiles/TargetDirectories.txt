@@ -1,0 +1,3 @@
+C:/Users/admin/source/repos/Kaspersky-SafeBoard2025-Spring-FileCollector/out/build/x86-release/CMakeFiles/CMakeScratch/TryCompile-16lbij/CMakeFiles/cmTC_7cea2.dir
+C:/Users/admin/source/repos/Kaspersky-SafeBoard2025-Spring-FileCollector/out/build/x86-release/CMakeFiles/CMakeScratch/TryCompile-16lbij/CMakeFiles/edit_cache.dir
+C:/Users/admin/source/repos/Kaspersky-SafeBoard2025-Spring-FileCollector/out/build/x86-release/CMakeFiles/CMakeScratch/TryCompile-16lbij/CMakeFiles/rebuild_cache.dir

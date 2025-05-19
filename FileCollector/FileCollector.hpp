@@ -52,14 +52,14 @@ public:
     // Требуется предложить и реализовать оптимальный интерфейс.
     // std::vector<uint8_t> GetFile(uint32_t fileId); // Как передавать данные? 
 
-    // 1. std::optional нужен для обработки ситуации отсутствия файла
+    // 1. если нет файла nullptr
     // 2. используется std::shared_ptr для:
     //      1 случай: файл еще не собран - полная копия внутреннего буффера
     //      2 случай: файл уже собран полностью - возвращаю указатель на внутренний буффер
     // клиент должен не держать полученный shared_ptr дольше, 
     // чем живёт сам FileCollector (или конкретный File), чтобы избежать висячих указателей.
 
-    std::optional<std::shared_ptr<const std::vector<uint8_t>>> GetFile(uint32_t fileId) const;
+    const std::vector<uint8_t> GetFile(uint32_t fileId);
     std::optional<bool> IsComplete(uint32_t fileId) const;
 private:
     struct File 
